@@ -115,3 +115,7 @@ Red grid nodes inside the polygon, black, outside (in holes)
 ## Find cycles of intersecting contours. The complexity is O(NlogN)
 
 ![Cycles.png](images/Cycles.png)
+
+## Build isolines and isocontours
+
+![Isolines.png](images/Isolines.png)
