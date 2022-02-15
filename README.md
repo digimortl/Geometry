@@ -112,3 +112,6 @@ Red grid nodes inside the polygon, black, outside (in holes)
 
 ![clipped-grid.png](images/clipped-grid.png)
 
+## Find cycles of intersecting contours. The complexity is O(NlogN)
+
+![Cycles.png](images/Cycles.png)
