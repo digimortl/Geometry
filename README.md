@@ -108,14 +108,33 @@ function GridInPolygon(
 ): Boolean;
 ```
 
-Red grid nodes inside the polygon, black, outside (in holes)
+Red grid nodes are inside the polygon, blacks, outside (in holes)
 
 ![clipped-grid.png](images/clipped-grid.png)
 
-## Find cycles of intersecting contours. The complexity is O(NlogN)
+## Find cycles of intersecting contours
+
+Given a set of properly directed contours, the algorithm finds all cycles and returns 
+a result polygon (set of contours and holes). The complexity is O(NlogN).
 
 ![Cycles.png](images/Cycles.png)
 
+Blue regions are the result polygons, the white zones inside, holes. The border of the each 
+polygon comprises of the parts of the original contours. In case of the last closing contour 
+has wrong direction the cycle is considered not found, there must be applied some kind of 
+direction tolernt algorithm, f.e. based on triangulation or other methods.
+
 ## Build isolines and isocontours
+
+Given 2D irregular grid (surface) defined by 1D arrays of X, Y, and 2D array of Z values. 
+For each min(Z) <= Z' <= max(Z) value builds isolines or isocontours (closed version of 
+isolines) depending on if bClosure flag of `CreateIsolines` function is set. 
+
+How to use
+
+1. Initialize a gid and internal control structures, i.e. call `InitializeIsolines`.
+2. For each Z from [min(Z), max(Z)] call `CreateIsolines`. If you want just isolines 
+   set `bClosure` to `False`, otherwise, `True`.
+3. Release the grid and all resources, i.e. call `ReleaseIsolines`.
 
 ![Isolines.png](images/Isolines.png)
