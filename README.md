@@ -124,6 +124,9 @@ polygon comprises of the parts of the original contours. In case of the last clo
 has wrong direction the cycle is considered not found, there must be applied some kind of 
 direction tolernt algorithm, f.e. based on triangulation or other methods.
 
+This is some variation of "Line Segment Intersection Using a Sweep Line Algorithm" followed by 
+"Donald B. Johnson, Finding all the elementary circuits of a directed graph".
+
 ## Build isolines and isocontours
 
 Given 2D irregular grid (surface) defined by 1D arrays of X, Y, and 2D array of Z values. 
